@@ -24,8 +24,8 @@ License:        GPL-2.0-or-later
 Group:          Productivity/Networking/Web/Proxy
 URL:            https://tinyproxy.github.io/
 Source:         https://github.com/tinyproxy/tinyproxy/releases/download/%version/tinyproxy-%version.tar.xz
-Source1:        %name.logrotate
-Patch1:         tinyproxy-conf.patch
+Source1:        https://raw.githubusercontent.com/unmanarc/tinyproxy_rpm/main/%name.logrotate
+Patch1:         https://raw.githubusercontent.com/unmanarc/tinyproxy_rpm/main/tinyproxy-conf.patch
 BuildRequires:  asciidoc
 BuildRequires:  autoconf
 BuildRequires:  automake

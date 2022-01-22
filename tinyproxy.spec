@@ -18,7 +18,7 @@
 
 Name:           tinyproxy
 Version:        1.11.0
-Release:        3
+Release:        4
 Summary:        Minimalist WWW proxy
 License:        GPL-2.0-or-later
 Group:          Productivity/Networking/Web/Proxy
@@ -31,6 +31,9 @@ BuildRequires:  autoconf
 BuildRequires:  automake gcc-c++ gcc
 BuildRequires:  libxslt
 BuildRequires:  xz
+%if 0%{?rhel} != 7
+BuildRequires:  systemd-rpm-macros
+%endif
 Requires:       logrotate
 
 %description

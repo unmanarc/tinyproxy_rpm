@@ -18,7 +18,7 @@
 
 Name:           tinyproxy
 Version:        1.11.0
-Release:        2
+Release:        3
 Summary:        Minimalist WWW proxy
 License:        GPL-2.0-or-later
 Group:          Productivity/Networking/Web/Proxy
@@ -30,7 +30,6 @@ BuildRequires:  asciidoc
 BuildRequires:  autoconf
 BuildRequires:  automake gcc-c++ gcc
 BuildRequires:  libxslt
-BuildRequires:  systemd-rpm-macros
 BuildRequires:  xz
 Requires:       logrotate
 
@@ -80,17 +79,16 @@ getent group tinyproxy >/dev/null || groupadd -r tinyproxy
 getent passwd tinyproxy >/dev/null || \
 	useradd -c "Tinyproxy" -d "%_datadir/%name" -g tinyproxy \
 	-r -s /bin/false tinyproxy
-%service_add_pre tinyproxy.service
 
 %post
 systemd-tmpfiles --create tinyproxy.conf || :
-%service_add_post tinyproxy.service
+%systemd_post %{name}.service
 
 %preun
-%service_del_preun tinyproxy.service
+%systemd_preun %{name}.service
 
 %postun
-%service_del_postun tinyproxy.service
+%systemd_postun_with_restart %{name}.service
 
 %files
 %doc NEWS README README.md

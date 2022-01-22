@@ -28,7 +28,7 @@ Source1:        https://raw.githubusercontent.com/unmanarc/tinyproxy_rpm/main/%n
 Patch1:         https://raw.githubusercontent.com/unmanarc/tinyproxy_rpm/main/tinyproxy-conf.patch
 BuildRequires:  asciidoc
 BuildRequires:  autoconf
-BuildRequires:  automake
+BuildRequires:  automake gcc-c++ gcc
 BuildRequires:  libxslt
 BuildRequires:  systemd-rpm-macros
 BuildRequires:  xz

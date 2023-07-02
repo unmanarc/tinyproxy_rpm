@@ -17,7 +17,7 @@
 
 
 Name:           tinyproxy
-Version:        1.11.0
+Version:        1.11.1
 Release:        4
 Summary:        Minimalist WWW proxy
 License:        GPL-2.0-or-later
@@ -107,6 +107,8 @@ systemd-tmpfiles --create tinyproxy.conf || :
 %attr(750,%name,root) %_localstatedir/log/%name
 
 %changelog
+* Sun Jul 02 2023 Aaron G. Mizrachi P. <aaron@unmanarc.com>
+- Upgraded to version 1.11.1
 * Sat Jan 22 2022 Aaron G. Mizrachi P. <aaron@unmanarc.com>
 - Ported to COPR / RHEL
 * Fri Apr 16 2021 Jan Engelhardt <jengelh@inai.de>
